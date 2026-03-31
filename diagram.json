@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "author": "Anonymous maker",
+  "editor": "wokwi",
+  "parts": [
+    { "id": "esp",          "type": "wokwi-esp32-devkit-v1", "top": 80,  "left": 0,   "attrs": {} },
+    { "id": "pot_ambient",  "type": "wokwi-potentiometer",   "top": 0,   "left": 300, "attrs": { "value": "0.5" } },
+    { "id": "pot_water",    "type": "wokwi-potentiometer",   "top": 100, "left": 300, "attrs": { "value": "0.5" } },
+    { "id": "pot_turbidity","type": "wokwi-potentiometer",   "top": 200, "left": 300, "attrs": { "value": "0.5" } },
+    { "id": "pot_ph",       "type": "wokwi-potentiometer",   "top": 300, "left": 300, "attrs": { "value": "0.5" } }
+  ],
+  "connections": [
+    ["esp:3V3",   "pot_ambient:VCC",  "red",   []],
+    ["esp:GND.1", "pot_ambient:GND",  "black", []],
+    ["esp:D34",    "pot_ambient:SIG",  "green", []],
+
+    ["esp:3V3",   "pot_water:VCC",    "red",   []],
+    ["esp:GND.1", "pot_water:GND",    "black", []],
+    ["esp:D35",    "pot_water:SIG",    "green", []],
+
+    ["esp:3V3",   "pot_turbidity:VCC","red",   []],
+    ["esp:GND.1", "pot_turbidity:GND","black", []],
+    ["esp:D32",    "pot_turbidity:SIG","green", []],
+
+    ["esp:3V3",   "pot_ph:VCC",       "red",   []],
+    ["esp:GND.1", "pot_ph:GND",       "black", []],
+    ["esp:D33",    "pot_ph:SIG",       "green", []]
+  ],
+  "serialMonitor": {
+    "collapse": false,
+    "convertEol": false,
+    "display": "always",
+    "newline": "lf"
+  }
+}
